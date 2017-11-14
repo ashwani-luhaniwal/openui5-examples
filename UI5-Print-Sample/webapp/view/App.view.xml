@@ -1,0 +1,65 @@
+<mvc:View controllerName="sap.sample.UI5-Print-Sample.controller.App" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc"
+	displayBlock="true" xmlns="sap.m">
+	<App id="idAppControl">
+		<pages>
+			<Page title="{i18n>title}" class="sapUiContentPadding">
+				<content>
+					<Panel
+						headerText="Panel (FlexBox SpaceBetween)"
+						expandable="true"
+						expanded="true">
+						<HBox justifyContent="SpaceBetween">
+							<Text text="Flex Item 1"></Text>
+							<Text text="Flex Item 2"></Text>
+						</HBox>
+					</Panel>
+					<List headerText="List">
+						<GroupHeaderListItem title="Group Header List Item"></GroupHeaderListItem>
+						<StandardListItem
+							title="List Item 1"
+							description="Description 1"
+							icon="sap-icon://home"
+							iconDensityAware="false"></StandardListItem>
+					</List>
+					<Table id="table">
+						<headerToolbar>
+							<Toolbar>
+								<Text text="Responsive Table"></Text>
+							</Toolbar>
+						</headerToolbar>
+						<columns>
+							<Column
+								width="12em">
+								<Text text="Title"></Text>
+							</Column>
+							<Column>
+								<Text text="Description"></Text>
+							</Column>
+						</columns>
+						<items>
+							<ColumnListItem>
+								<Text text="Cell 1, 1"></Text>
+								<Text text="Cell 1, 2"></Text>
+							</ColumnListItem>
+						</items>
+					</Table>
+				</content>
+				<footer>
+					<Toolbar>
+						<ToolbarSpacer />
+						<Button
+							press="onPrint"
+							text="Print"
+							icon="sap-icon://print"
+							type="Emphasized"></Button>
+						<Button
+							press="onPrint"
+							text="Print Table"
+							data:targetId="table"
+							icon="sap-icon://print"></Button>
+					</Toolbar>
+				</footer>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>
